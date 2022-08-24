@@ -19,6 +19,8 @@
 		7BE9567E28B62EBD00E60176 /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9567D28B62EBD00E60176 /* FaveButton.swift */; };
 		7BE9568028B6339700E60176 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9567F28B6339700E60176 /* TagsView.swift */; };
 		7BE9568228B6455A00E60176 /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9568128B6455A00E60176 /* NavigationTitle.swift */; };
+		7BE9568428B6873800E60176 /* QuoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9568328B6873800E60176 /* QuoteListView.swift */; };
+		7BE9568628B68E3800E60176 /* QuoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9568528B68E3800E60176 /* QuoteRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		7BE9567D28B62EBD00E60176 /* FaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaveButton.swift; sourceTree = "<group>"; };
 		7BE9567F28B6339700E60176 /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
 		7BE9568128B6455A00E60176 /* NavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitle.swift; sourceTree = "<group>"; };
+		7BE9568328B6873800E60176 /* QuoteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteListView.swift; sourceTree = "<group>"; };
+		7BE9568528B68E3800E60176 /* QuoteRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 		7BE9567028B5785000E60176 /* Quote List */ = {
 			isa = PBXGroup;
 			children = (
+				7BE9568328B6873800E60176 /* QuoteListView.swift */,
+				7BE9568528B68E3800E60176 /* QuoteRow.swift */,
 			);
 			path = "Quote List";
 			sourceTree = "<group>";
@@ -236,11 +242,13 @@
 				7BE9567C28B61E3F00E60176 /* CustomTabBarView.swift in Sources */,
 				7BE9567E28B62EBD00E60176 /* FaveButton.swift in Sources */,
 				7BE9567628B579F100E60176 /* TabBarButton.swift in Sources */,
+				7BE9568628B68E3800E60176 /* QuoteRow.swift in Sources */,
 				7BE9567928B57B3300E60176 /* Color+Extension.swift in Sources */,
 				7BE9566C28B535CE00E60176 /* LoginView.swift in Sources */,
 				7BE9565D28B500B300E60176 /* ContentView.swift in Sources */,
 				7BE9568228B6455A00E60176 /* NavigationTitle.swift in Sources */,
 				7BE9566F28B577AF00E60176 /* RandomQuoteView.swift in Sources */,
+				7BE9568428B6873800E60176 /* QuoteListView.swift in Sources */,
 				7BE9565B28B500B300E60176 /* FaveQsApp.swift in Sources */,
 				7BE9568028B6339700E60176 /* TagsView.swift in Sources */,
 			);
