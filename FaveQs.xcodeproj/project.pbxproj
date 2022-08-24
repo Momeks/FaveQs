@@ -89,8 +89,8 @@
 		7BE9566828B500C300E60176 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7BE9566D28B5778A00E60176 /* Random Qoute */,
-				7BE9567028B5785000E60176 /* List */,
+				7BE9566D28B5778A00E60176 /* Random Quote */,
+				7BE9567028B5785000E60176 /* Quote List */,
 				7BE9566A28B535C200E60176 /* Login */,
 			);
 			path = Views;
@@ -111,19 +111,19 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		7BE9566D28B5778A00E60176 /* Random Qoute */ = {
+		7BE9566D28B5778A00E60176 /* Random Quote */ = {
 			isa = PBXGroup;
 			children = (
 				7BE9566E28B577AF00E60176 /* RandomQuoteView.swift */,
 			);
-			path = "Random Qoute";
+			path = "Random Quote";
 			sourceTree = "<group>";
 		};
-		7BE9567028B5785000E60176 /* List */ = {
+		7BE9567028B5785000E60176 /* Quote List */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = List;
+			path = "Quote List";
 			sourceTree = "<group>";
 		};
 		7BE9567328B5798E00E60176 /* Utilities */ = {
@@ -371,7 +371,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaveQs/Preview Content\"";
-				DEVELOPMENT_TEAM = S5AGZ2H5GG;
+				DEVELOPMENT_TEAM = JA88C6ETPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -400,7 +400,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaveQs/Preview Content\"";
-				DEVELOPMENT_TEAM = S5AGZ2H5GG;
+				DEVELOPMENT_TEAM = JA88C6ETPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

@@ -9,32 +9,33 @@ import SwiftUI
 
 struct TagsView: View {
 	
-	private var tags = ["love", "nature","love", "nature"]
+	private var tags = ["love", "nature","world"]
 	private var layout = [GridItem(.fixed(30))]
-
+	
 	var body: some View {
-		GeometryReader { geo in
-			HStack(alignment: .center) {
-				
-				Image(systemName: "tag.fill")
-				Text("Tags:")
-					.font(.callout.bold())
-			
+		HStack {
+			Spacer()
+			GeometryReader { geo in
 				ScrollView(.horizontal, showsIndicators: false) {
-					LazyHGrid(rows: layout) {
-						ForEach(tags, id: \.self) {
-							Button("\($0)") {
-					
-							}
+					HStack(alignment: .center) {
+						Image(systemName: "tag.fill")
+						Text("Tags:")
 							.font(.callout.bold())
-							.foregroundColor(.FQBlue)
-							.buttonStyle(FQButtonStyle())
+						LazyHGrid(rows: layout) {
+							ForEach(tags, id: \.self) {
+								Button("\($0)") {
+									
+								}
+								.font(.callout.bold())
+								.foregroundColor(.FQBlue)
+								.buttonStyle(FQButtonStyle())
+							}
 						}
 					}
+					.frame(width: geo.size.width, height: 30, alignment: .center)
 				}
+				Spacer()
 			}
-			.frame(height: 10)
-			.padding()
 		}
 	}
 }
