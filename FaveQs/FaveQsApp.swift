@@ -9,9 +9,25 @@ import SwiftUI
 
 @main
 struct FaveQsApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+	
+	@State var selection: Int = 0
+	
+	var body: some Scene {
+		WindowGroup {
+			TabView(selection: $selection) {
+				RandomQouteView()
+					.tag(0)
+				
+				LoginView()
+					.tag(1)
+				
+				RandomQouteView()
+					.tag(2)
+			}
+			.overlay {
+				CustomTabBarView(selection: $selection)
+			}
+		}
+	}
 }
+
