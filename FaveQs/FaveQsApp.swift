@@ -15,13 +15,13 @@ struct FaveQsApp: App {
 	var body: some Scene {
 		WindowGroup {
 			TabView(selection: $selection) {
-				RandomQouteView()
+				RandomQuoteView()
 					.tag(0)
 				
 				LoginView()
 					.tag(1)
 				
-				RandomQouteView()
+				RandomQuoteView()
 					.tag(2)
 			}
 			.overlay {
