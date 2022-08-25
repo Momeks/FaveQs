@@ -14,49 +14,47 @@ struct QuoteRow: View {
 	private var text = "Never let your schooling interfere with your education."
 	
 	var body: some View {
-		GeometryReader { geo in
-			Button {
-				
-			} label: {
-				RoundedRectangle(cornerRadius: 15)
-					.frame(width: 180, height: 180)
-					.foregroundColor(.gray.opacity(0.2))
-					.overlay {
-						VStack(spacing: 10) {
-							HStack(spacing: 3) {
-								Image(systemName: "heart.fill")
-									.imageScale(.small)
-									.foregroundColor(.FQBlue)
-								Text("8")
-									.font(.footnote.bold())
-									.foregroundColor(.FQBlue)
-								Spacer()
-							}
-							Text(text)
-								.font(.system(size: 17, weight: .regular, design: .serif))
-							
-							HStack {
-								Spacer()
-								Text("— Martin Luther")
-									.font(.system(size: 13, weight: .bold, design: .serif))
-									.foregroundColor(.primary.opacity(0.7))
-							}
-							
+		Button {
+			
+		} label: {
+			RoundedRectangle(cornerRadius: 15)
+				.foregroundColor(.gray.opacity(0.2))
+				.overlay {
+					VStack(spacing: 2) {
+						HStack(spacing: 3) {
+							Image(systemName: "heart.fill")
+								.imageScale(.small)
+								.foregroundColor(.FQBlue)
+							Text("8")
+								.font(.footnote.bold())
+								.foregroundColor(.FQBlue)
+							Spacer()
 						}
-						.padding()
+						Text(text)
+							.font(.system(size: 17, weight: .regular, design: .serif))
+						Spacer()
+						HStack {
+							Spacer()
+							Text("— Martin Luther")
+								.font(.system(size: 13, weight: .bold, design: .serif))
+								.foregroundColor(.primary.opacity(0.7))
+						}
 					}
-			}
-			.buttonStyle(FQButtonStyle())
-			.padding()
+					.padding()
+				}
 		}
+		.buttonStyle(FQButtonStyle())
+		.frame(width: 180, height: 180)
 	}
 }
 
-struct QuoteRow_Previews: PreviewProvider {
-	static var previews: some View {
-		QuoteRow()
-	}
-}
 
+//
+//struct QuoteRow_Previews: PreviewProvider {
+//	static var previews: some View {
+//		QuoteRow()
+//	}
+//}
+//
 
 

@@ -9,16 +9,24 @@ import SwiftUI
 
 struct QuoteListView: View {
 	
-    var body: some View {
-		NavigationView {
-			
+	private var layout: [GridItem] {
+		Array(repeating: .init(.adaptive(minimum: 150, maximum: 200)), count: 2)
+	}
+	
+	var body: some View {
+		ScrollView(.vertical, showsIndicators: true) {
+			LazyVGrid(columns: layout, spacing: 10) {
+				ForEach(0..<20) { item in
+					QuoteRow()
+				}
+			}
+			.padding(.horizontal)
 		}
-		.navigationTitle("Quote List")
-    }
+	}
 }
 
 struct QuoteListView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuoteListView()
-    }
+	static var previews: some View {
+		QuoteListView()
+	}
 }

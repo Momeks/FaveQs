@@ -10,12 +10,12 @@ import SwiftUI
 @main
 struct FaveQsApp: App {
 	
-	@State var selection: Int = 0
+	@State private var selection: Int = 0
 	
 	var body: some Scene {
 		WindowGroup {
 			TabView(selection: $selection) {
-				RandomQuoteView()
+				QuoteListView()
 					.tag(0)
 				
 				LoginView()
