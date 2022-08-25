@@ -9,4 +9,5 @@ import SwiftUI
 
 extension Color {
 	static let FQBlue = Color("FQBlue")
+	static let systemBackground = Color("systemBackground")
 }

@@ -15,7 +15,6 @@ struct CustomTabBarView: View {
 		GeometryReader { geo in
 			VStack(alignment: .center) {
 				Spacer()
-				
 				HStack(spacing: 35) {
 					Spacer()
 					TabBarButton(image: "text.quote", color: selection == 0 ? .FQBlue : .gray.opacity(0.5)) {
@@ -33,9 +32,9 @@ struct CustomTabBarView: View {
 				}
 				.background {
 					VStack(alignment: .center) {
-						Color.clear
-							.background(.thickMaterial)
-							.frame(width: geo.size.width, height: 70)
+						Color.systemBackground
+							.frame(width: geo.size.width, height: 95)
+							.background(.regularMaterial)
 					}
 				}
 			}
