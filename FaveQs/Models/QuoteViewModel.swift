@@ -11,10 +11,9 @@ import Alamofire
 class QuoteViewModel: ObservableObject {
 	
 	@Published var quotes = [Quote]()
-	@Published var success = false
 	
-	func getQuotes() {
-		let params = ["page":"1"]
+	func getQuotes(page: Int) {
+		let params = ["page":"\(page)"]
 		Service.shared.request(api: "quotes", parameters: params, completion: { (result: Result<QuoteResponse,AFError>) in
 			switch result {
 			case .success(let success):

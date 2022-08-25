@@ -27,6 +27,7 @@
 		7BEA65E228B77C400006B905 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7BEA65E128B77C400006B905 /* Alamofire */; };
 		7BEA65E628B7BC010006B905 /* QuoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65E528B7BC010006B905 /* QuoteResponse.swift */; };
 		7BEA65E828B7BC1F0006B905 /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65E728B7BC1F0006B905 /* QuoteViewModel.swift */; };
+		7BEA65EE28B8148C0006B905 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65ED28B8148C0006B905 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		7BEA65DC28B77B9E0006B905 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		7BEA65E528B7BC010006B905 /* QuoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteResponse.swift; sourceTree = "<group>"; };
 		7BEA65E728B7BC1F0006B905 /* QuoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewModel.swift; sourceTree = "<group>"; };
+		7BEA65ED28B8148C0006B905 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		7BEA65C628B765240006B905 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7BEA65ED28B8148C0006B905 /* Theme.swift */,
 				7BEA65D628B766430006B905 /* Services */,
 				7BEA65C728B765240006B905 /* UI Components */,
 				7BEA65CE28B765240006B905 /* Extensions */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BEA65D028B765240006B905 /* FaveButton.swift in Sources */,
+				7BEA65EE28B8148C0006B905 /* Theme.swift in Sources */,
 				7BEA65C428B7650D0006B905 /* QuoteListView.swift in Sources */,
 				7BEA65E628B7BC010006B905 /* QuoteResponse.swift in Sources */,
 				7BEA65DD28B77B9E0006B905 /* Service.swift in Sources */,
@@ -416,7 +420,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaveQs/Preview Content\"";
-				DEVELOPMENT_TEAM = S5AGZ2H5GG;
+				DEVELOPMENT_TEAM = JA88C6ETPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,7 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FaveQs/Preview Content\"";
-				DEVELOPMENT_TEAM = S5AGZ2H5GG;
+				DEVELOPMENT_TEAM = JA88C6ETPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

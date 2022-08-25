@@ -17,25 +17,16 @@ struct CustomTabBarView: View {
 				Spacer()
 				HStack(spacing: 35) {
 					Spacer()
-					TabBarButton(image: "text.quote", color: selection == 0 ? .FQBlue : .gray.opacity(0.5)) {
+					TabBarButton(image: "text.quote", color: selection == 0 ? .FQBlue : .lightGray) {
 						selection = 0
 					}
-					
-					TabBarButton(image: "quote.bubble.fill", color: selection == 1 ? .FQBlue : .gray.opacity(0.5)) {
+					TabBarButton(image: "quote.bubble.fill", color: selection == 1 ? .FQBlue : .lightGray) {
 						selection = 1
 					}
-					
-					TabBarButton(image: "heart.fill", color: selection == 2 ? .FQBlue : .gray.opacity(0.5)) {
+					TabBarButton(image: "heart.fill", color: selection == 2 ? .FQBlue : .lightGray) {
 						selection = 2
 					}
 					Spacer()
-				}
-				.background {
-					VStack(alignment: .center) {
-						Color.systemBackground
-							.frame(width: geo.size.width, height: 95)
-							.background(.regularMaterial)
-					}
 				}
 			}
 		}

@@ -27,6 +27,9 @@ struct FaveQsApp: App {
 			.overlay {
 				CustomTabBarView(selection: $selection)
 			}
+			.onAppear {
+				Theme.navigationBarColors(background: .systemBackground, tintColor: .FQBlue, fontInLine: "Georgia-Bold", fontLarge: "Georgia-Bold")
+			}
 		}
 	}
 }

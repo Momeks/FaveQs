@@ -20,13 +20,16 @@ struct RandomQuoteView: View {
 					.animation(.linear, value: viewModel.quotes.isEmpty)
 				
 				if let quote = viewModel.quotes.first {
-					QuoteDetailsView(quote: quote)
+					VStack {
+						Spacer()
+						QuoteDetailsView(quote: quote)
+					}
 				}
 			}
 			.navigationTitle("Random Quote")
 		}
 		.task {
-			viewModel.getQuotes()
+			viewModel.getQuotes(page: Int.random(in: 1..<10))
 		}
 	}
 }

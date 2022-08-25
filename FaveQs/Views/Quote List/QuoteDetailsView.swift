@@ -8,32 +8,63 @@
 import SwiftUI
 
 struct QuoteDetailsView: View {
+	
 	var quote: Quote
 	
 	var body: some View {
-		VStack {
-			Spacer()
-			VStack(spacing: 40) {
-				Text("“\(quote.body)”")
-					.font(.system(size: 31, weight: .regular, design: .serif))
-					.fixedSize(horizontal: false, vertical: true)
-				
-				HStack {
-					Spacer()
-					Text("— \(quote.author)")
-						.font(.system(size: 19, weight: .bold, design: .serif))
-						.foregroundColor(.secondary)
+		ScrollView(showsIndicators: false) {
+			VStack {
+				Spacer()
+				VStack(spacing: 10) {
+					
+					//up-down votes and favorites count
+					HStack {
+						HStack {
+							Image(systemName: "arrow.up")
+								.font(Font.system(size: 16, weight: .medium))
+							Text("\(quote.upvotesCount)")
+								.font(.callout)
+						}
+						Divider()
+						HStack {
+							Image(systemName: "arrow.down")
+								.font(Font.system(size: 16, weight: .medium))
+							Text("\(quote.downvotesCount)")
+								.font(.callout)
+						}
+						Spacer()
+						HStack {
+							Image(systemName: "heart.fill")
+								.font(Font.system(size: 16, weight: .medium))
+							Text("\(quote.favoritesCount)")
+								.font(.callout)
+						}
+					}
+					.foregroundColor(.secondary)
+					Divider()
+					//quoutation
+					Text("“\(quote.body)”")
+						.font(.system(size: 31, weight: .regular, design: .serif))
+						.fixedSize(horizontal: false, vertical: true)
+					
+					//author
+					HStack {
+						Spacer()
+						Text("— \(quote.author)")
+							.font(.system(size: 19, weight: .bold, design: .serif))
+							.foregroundColor(.secondary)
+					}
 				}
-			}
-			.padding(30)
-			VStack(spacing: 15) {
-				FaveButton()
-				if !quote.tags.isEmpty {
-					TagsView(tags: quote.tags)
-						.frame(height: 30)
+				.padding(30)
+				VStack(spacing: 15) {
+					FaveButton()
+					if !quote.tags.isEmpty {
+						TagsView(tags: quote.tags)
+							.frame(height: 30)
+					}
 				}
+				Spacer()
 			}
-			Spacer()
 		}
 	}
 }

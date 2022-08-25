@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Quote
-struct Quote: Codable {
+struct Quote: Codable, Hashable {
 	let id: Int
 	let dialogue, quotePrivate: Bool
 	let tags: [String]
