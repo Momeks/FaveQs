@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct QuoteListView: View {
-	
-	private var layout: [GridItem] {
-		Array(repeating: .init(.adaptive(minimum: 150, maximum: 200)), count: 2)
-	}
+
+	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
 	
 	var body: some View {
 		ScrollView(.vertical, showsIndicators: true) {

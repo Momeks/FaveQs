@@ -20,7 +20,7 @@ struct QuoteRow: View {
 			RoundedRectangle(cornerRadius: 15)
 				.foregroundColor(.gray.opacity(0.2))
 				.overlay {
-					VStack(spacing: 2) {
+					VStack(alignment: .leading, spacing: 3) {
 						HStack(spacing: 3) {
 							Image(systemName: "heart.fill")
 								.imageScale(.small)
@@ -40,11 +40,11 @@ struct QuoteRow: View {
 								.foregroundColor(.primary.opacity(0.7))
 						}
 					}
-					.padding()
+					.padding(.all)
 				}
 		}
 		.buttonStyle(FQButtonStyle())
-		.frame(width: 180, height: 180)
+		.frame(width: 170, height: 170)
 	}
 }
 
