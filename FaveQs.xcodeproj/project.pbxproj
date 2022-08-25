@@ -23,6 +23,8 @@
 		7BEA65D528B765240006B905 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65CF28B765240006B905 /* Color+Extension.swift */; };
 		7BEA65D828B767410006B905 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65D728B767410006B905 /* Quote.swift */; };
 		7BEA65DA28B769B80006B905 /* QuoteDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65D928B769B80006B905 /* QuoteDetailsView.swift */; };
+		7BEA65DD28B77B9E0006B905 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65DC28B77B9E0006B905 /* Service.swift */; };
+		7BEA65DF28B77BC50006B905 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65DE28B77BC50006B905 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		7BEA65CF28B765240006B905 /* Color+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		7BEA65D728B767410006B905 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		7BEA65D928B769B80006B905 /* QuoteDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailsView.swift; sourceTree = "<group>"; };
+		7BEA65DC28B77B9E0006B905 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		7BEA65DE28B77BC50006B905 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +184,8 @@
 		7BEA65D628B766430006B905 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7BEA65DC28B77B9E0006B905 /* Service.swift */,
+				7BEA65DE28B77BC50006B905 /* NetworkError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -255,7 +261,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BEA65D028B765240006B905 /* FaveButton.swift in Sources */,
+				7BEA65DF28B77BC50006B905 /* NetworkError.swift in Sources */,
 				7BEA65C428B7650D0006B905 /* QuoteListView.swift in Sources */,
+				7BEA65DD28B77B9E0006B905 /* Service.swift in Sources */,
 				7BE9566C28B535CE00E60176 /* LoginView.swift in Sources */,
 				7BEA65D128B765240006B905 /* CustomTabBarView.swift in Sources */,
 				7BE9565D28B500B300E60176 /* ContentView.swift in Sources */,

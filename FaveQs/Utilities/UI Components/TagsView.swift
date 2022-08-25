@@ -10,7 +10,7 @@ import SwiftUI
 struct TagsView: View {
 
 	var tags: Array<String>
-	private var layout = [GridItem(.fixed(30))]
+	private let layout = [GridItem(.fixed(30))]
 	
 	var body: some View {
 		HStack {
@@ -46,6 +46,6 @@ struct TagsView: View {
 
 struct TagsView_Previews: PreviewProvider {
 	static var previews: some View {
-		TagsView(tags: ["Test","hey","aaa"])
+		TagsView(tags: ["Love","Nature","Happy"])
 	}
 }
