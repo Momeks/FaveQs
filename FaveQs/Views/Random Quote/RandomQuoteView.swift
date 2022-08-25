@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct RandomQuoteView: View {
+	
+	@ObservedObject var viewModel = QuoteViewModel()
+	
 	var body: some View {
-		VStack {
-			NavigationTitle(text: "Random Quote")
+		NavigationView {
+			ZStack(alignment: .center) {
+				ProgressView()
+					.progressViewStyle(.circular)
+					.opacity(viewModel.quotes.isEmpty ? 1.0 : 0.0)
+					.animation(.linear, value: viewModel.quotes.isEmpty)
+				
+				if let quote = viewModel.quotes.first {
+					QuoteDetailsView(quote: quote)
+				}
+			}
+			.navigationTitle("Random Quote")
+		}
+		.task {
+			viewModel.getQuotes()
 		}
 	}
 }

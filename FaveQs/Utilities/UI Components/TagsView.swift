@@ -10,7 +10,7 @@ import SwiftUI
 struct TagsView: View {
 
 	var tags: Array<String>
-	private let layout = [GridItem(.fixed(30))]
+	private let layout = [GridItem(.adaptive(minimum: 200))]
 	
 	var body: some View {
 		HStack {
@@ -22,9 +22,9 @@ struct TagsView: View {
 						Text("Tags:")
 							.font(.callout.bold())
 						LazyHGrid(rows: layout) {
-							ForEach(tags, id: \.self) {
-								Button("\($0)") {
-									
+							ForEach(tags, id: \.self) { tag in
+								Button(tag) {
+									print(tag)
 								}
 								.font(.callout.bold())
 								.foregroundColor(.FQBlue)

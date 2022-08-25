@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuoteListView: View {
-
+	
 	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
 	
 	var body: some View {

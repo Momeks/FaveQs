@@ -8,11 +8,8 @@
 import SwiftUI
 
 struct QuoteDetailsView: View {
-	
-	//MARK: - Variable
 	var quote: Quote
 	
-	//MARK: - View
 	var body: some View {
 		VStack {
 			Spacer()
@@ -31,16 +28,18 @@ struct QuoteDetailsView: View {
 			.padding(30)
 			VStack(spacing: 15) {
 				FaveButton()
-				TagsView(tags: quote.tags)
+				if !quote.tags.isEmpty {
+					TagsView(tags: quote.tags)
+						.frame(height: 30)
+				}
 			}
 			Spacer()
 		}
 	}
 }
 
-
-//struct QuoteDetailsView_Previews: PreviewProvider {
-//	static var previews: some View {
-//		QuoteDetailsView(quote: <#Quote#>)
-//	}
-//}
+struct QuoteDetailsView_Previews: PreviewProvider {
+	static var previews: some View {
+		QuoteDetailsView(quote: Quote(id: 26637, dialogue: false, quotePrivate: false, tags: ["nature","love"], url: "https://favqs.com/quotes/ralph-waldo-emerson/26637-the-highest-r-", favoritesCount: 2, upvotesCount: 1, downvotesCount: 0, author: "Ralph Waldo Emerson", authorPermalink: "ralph-waldo-emerson", body: "The highest revelation is that God is in every man.", source: nil, context: nil))
+	}
+}
