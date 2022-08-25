@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct TagsView: View {
-	
-	private var tags = ["love", "nature","world"]
+
+	var tags: Array<String>
 	private var layout = [GridItem(.fixed(30))]
 	
 	var body: some View {
@@ -38,10 +38,14 @@ struct TagsView: View {
 			}
 		}
 	}
+	
+	internal init(tags: Array<String>) {
+		self.tags = tags
+	}
 }
 
 struct TagsView_Previews: PreviewProvider {
 	static var previews: some View {
-		TagsView()
+		TagsView(tags: ["Test","hey","aaa"])
 	}
 }
