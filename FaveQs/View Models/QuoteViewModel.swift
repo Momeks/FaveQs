@@ -24,14 +24,13 @@ class QuoteViewModel: ObservableObject {
 	}
 	
 	func getQuotes(page: Int, filter: String? = nil, type: FQType? = nil, refreshable: Bool? = nil) {
-		
 		isLoading = true
 		
 		var parameters = ["page":"\(page)", "type":type ?? .none] as [String : Any]
 		if let filter = filter {
 			parameters["filter"] = filter
 		}
-		
+
 		Service.shared.request(api: "quotes", parameters: parameters, completion: { (result: Result<QuoteResponse,AFError>) in
 			self.isLoading = false
 			switch result {

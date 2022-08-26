@@ -14,7 +14,6 @@ struct RandomQuoteView: View {
 	var body: some View {
 		NavigationView {
 			ZStack(alignment: .center) {
-				
 				if let quote = viewModel.quotes.shuffled().first {
 					VStack {
 						Spacer()

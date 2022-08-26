@@ -15,7 +15,6 @@
 		7BE9566F28B577AF00E60176 /* RandomQuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE9566E28B577AF00E60176 /* RandomQuoteView.swift */; };
 		7BEA65C428B7650D0006B905 /* QuoteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65C228B7650D0006B905 /* QuoteListView.swift */; };
 		7BEA65C528B7650D0006B905 /* QuoteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65C328B7650D0006B905 /* QuoteRow.swift */; };
-		7BEA65D028B765240006B905 /* FaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65C828B765240006B905 /* FaveButton.swift */; };
 		7BEA65D128B765240006B905 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65CA28B765240006B905 /* CustomTabBarView.swift */; };
 		7BEA65D228B765240006B905 /* TabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65CB28B765240006B905 /* TabBarButton.swift */; };
 		7BEA65D428B765240006B905 /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65CD28B765240006B905 /* TagsView.swift */; };
@@ -28,6 +27,10 @@
 		7BEA65E828B7BC1F0006B905 /* QuoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65E728B7BC1F0006B905 /* QuoteViewModel.swift */; };
 		7BEA65EE28B8148C0006B905 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65ED28B8148C0006B905 /* Theme.swift */; };
 		7BEA65F028B8BD5C0006B905 /* HUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65EF28B8BD5C0006B905 /* HUDView.swift */; };
+		7BEA65F528B92C5A0006B905 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65F428B92C5A0006B905 /* ActionButton.swift */; };
+		7BEA65F928B9361B0006B905 /* FilteredQuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65F828B9361B0006B905 /* FilteredQuotesView.swift */; };
+		7BEA65FB28B951B70006B905 /* NSNotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65FA28B951B70006B905 /* NSNotificationName+Extension.swift */; };
+		7BEA65FD28B963A20006B905 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65FC28B963A20006B905 /* TagViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +43,6 @@
 		7BE9566E28B577AF00E60176 /* RandomQuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomQuoteView.swift; sourceTree = "<group>"; };
 		7BEA65C228B7650D0006B905 /* QuoteListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteListView.swift; sourceTree = "<group>"; };
 		7BEA65C328B7650D0006B905 /* QuoteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteRow.swift; sourceTree = "<group>"; };
-		7BEA65C828B765240006B905 /* FaveButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaveButton.swift; sourceTree = "<group>"; };
 		7BEA65CA28B765240006B905 /* CustomTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		7BEA65CB28B765240006B905 /* TabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarButton.swift; sourceTree = "<group>"; };
 		7BEA65CD28B765240006B905 /* TagsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,10 @@
 		7BEA65ED28B8148C0006B905 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		7BEA65EF28B8BD5C0006B905 /* HUDView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDView.swift; sourceTree = "<group>"; };
 		7BEA65F128B8CA5A0006B905 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7BEA65F428B92C5A0006B905 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		7BEA65F828B9361B0006B905 /* FilteredQuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredQuotesView.swift; sourceTree = "<group>"; };
+		7BEA65FA28B951B70006B905 /* NSNotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Extension.swift"; sourceTree = "<group>"; };
+		7BEA65FC28B963A20006B905 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 				7BEA65C228B7650D0006B905 /* QuoteListView.swift */,
 				7BEA65C328B7650D0006B905 /* QuoteRow.swift */,
 				7BEA65F228B8F48C0006B905 /* Quote Details */,
+				7BEA65F628B935E20006B905 /* Filtered Quotes */,
 			);
 			path = "Quote List";
 			sourceTree = "<group>";
@@ -169,6 +176,7 @@
 				7BEA65C928B765240006B905 /* Custom Tab Bar */,
 				7BEA65ED28B8148C0006B905 /* Theme.swift */,
 				7BEA65EF28B8BD5C0006B905 /* HUDView.swift */,
+				7BEA65F428B92C5A0006B905 /* ActionButton.swift */,
 			);
 			path = "UI Components";
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				7BEA65CF28B765240006B905 /* Color+Extension.swift */,
+				7BEA65FA28B951B70006B905 /* NSNotificationName+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -202,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				7BEA65D928B769B80006B905 /* QuoteDetailsView.swift */,
-				7BEA65C828B765240006B905 /* FaveButton.swift */,
 				7BEA65CD28B765240006B905 /* TagsView.swift */,
 			);
 			path = "Quote Details";
@@ -214,6 +222,15 @@
 				7BEA65E728B7BC1F0006B905 /* QuoteViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		7BEA65F628B935E20006B905 /* Filtered Quotes */ = {
+			isa = PBXGroup;
+			children = (
+				7BEA65F828B9361B0006B905 /* FilteredQuotesView.swift */,
+				7BEA65FC28B963A20006B905 /* TagViewModel.swift */,
+			);
+			path = "Filtered Quotes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,8 +309,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BEA65D028B765240006B905 /* FaveButton.swift in Sources */,
+				7BEA65F928B9361B0006B905 /* FilteredQuotesView.swift in Sources */,
 				7BEA65EE28B8148C0006B905 /* Theme.swift in Sources */,
+				7BEA65FD28B963A20006B905 /* TagViewModel.swift in Sources */,
 				7BEA65C428B7650D0006B905 /* QuoteListView.swift in Sources */,
 				7BEA65E628B7BC010006B905 /* QuoteResponse.swift in Sources */,
 				7BEA65DD28B77B9E0006B905 /* Service.swift in Sources */,
@@ -302,6 +320,7 @@
 				7BE9565D28B500B300E60176 /* ContentView.swift in Sources */,
 				7BEA65D828B767410006B905 /* Quote.swift in Sources */,
 				7BEA65E828B7BC1F0006B905 /* QuoteViewModel.swift in Sources */,
+				7BEA65F528B92C5A0006B905 /* ActionButton.swift in Sources */,
 				7BEA65DA28B769B80006B905 /* QuoteDetailsView.swift in Sources */,
 				7BEA65D228B765240006B905 /* TabBarButton.swift in Sources */,
 				7BEA65D528B765240006B905 /* Color+Extension.swift in Sources */,
@@ -309,6 +328,7 @@
 				7BE9566F28B577AF00E60176 /* RandomQuoteView.swift in Sources */,
 				7BEA65D428B765240006B905 /* TagsView.swift in Sources */,
 				7BE9565B28B500B300E60176 /* FaveQsApp.swift in Sources */,
+				7BEA65FB28B951B70006B905 /* NSNotificationName+Extension.swift in Sources */,
 				7BEA65F028B8BD5C0006B905 /* HUDView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

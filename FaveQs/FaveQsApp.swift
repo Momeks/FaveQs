@@ -21,7 +21,7 @@ struct FaveQsApp: App {
 				QuoteListView()
 					.tag(1)
 				
-				RandomQuoteView()
+				EmptyView()
 					.tag(2)
 			}
 			.overlay {

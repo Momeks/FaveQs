@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct ActionButton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	
+	var image: String
+	var title: String
+	var action: (() -> Void)?
+	
+	var body: some View {
+		Button {
+			action?()
+		} label: {
+			HStack {
+				Image(systemName: image)
+				Text(title)
+					.font(.callout.bold())
+					.foregroundColor(.FQBlue)
+			}
+		}
+		.buttonStyle(FQButtonStyle())
+	}
 }
 
 struct ActionButton_Previews: PreviewProvider {
     static var previews: some View {
-        ActionButton()
+		ActionButton(image: "heart.fill", title: "Fave it")
     }
 }

@@ -10,13 +10,14 @@ import SwiftUI
 struct QuoteDetailsView: View {
 	
 	var quote: Quote
+	@State private var isPresented = false
+	@ObservedObject private var tagModel = TagViewModel()
 	
 	var body: some View {
 		ScrollView(showsIndicators: false) {
-			VStack {
+			VStack(alignment: .leading) {
 				Spacer()
 				VStack(spacing: 10) {
-					
 					//up-down votes and favorites count
 					HStack {
 						HStack {
@@ -61,17 +62,32 @@ struct QuoteDetailsView: View {
 				.padding(30)
 				
 				//Fave buttons and tags
-				VStack(spacing: 15) {
-					FaveButton()
+				VStack(alignment: .leading, spacing: 15) {
+					ActionButton(image: "heart.fill", title: "Fave it")
+					Divider()
+					ActionButton(image: "square.and.arrow.up.fill", title: "Share")
+					Divider()
 					if !quote.tags.isEmpty {
 						TagsView(tags: quote.tags)
-							.frame(height: 30)
 					}
 				}
+				.padding()
 				Spacer()
 			}
 		}
+		.onReceive(NotificationCenter.default.publisher(for: .ongGetTag), perform: { notification in
+			DispatchQueue.main.async {
+				isPresented.toggle()
+			}
+			if let tag = notification.object as? String {
+				tagModel.tag = tag
+			}
+		})
+		.sheet(isPresented: $isPresented) {
+			FilteredQuotesView(filter: tagModel.tag)
+		}
 	}
+	
 }
 
 struct QuoteDetailsView_Previews: PreviewProvider {

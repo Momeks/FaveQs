@@ -8,34 +8,37 @@
 import SwiftUI
 
 struct TagsView: View {
-
+	
 	var tags: Array<String>
-	private let layout = [GridItem(.adaptive(minimum: 200))]
+	private let layout = [GridItem(.adaptive(minimum: 100))]
+	@State private var getTag = ""
 	
 	var body: some View {
-		HStack {
-			Spacer()
-			GeometryReader { geo in
-				ScrollView(.horizontal, showsIndicators: false) {
-					HStack(alignment: .center) {
-						Image(systemName: "tag.fill")
-						Text("Tags:")
-							.font(.callout.bold())
+		GeometryReader { geo in
+			HStack {
+				HStack(alignment: .center) {
+					Image(systemName: "tag.fill")
+					Text("Tags:")
+						.font(.callout.bold())
+					ScrollView(.horizontal, showsIndicators: false) {
 						LazyHGrid(rows: layout) {
 							ForEach(tags, id: \.self) { tag in
 								Button(tag) {
-									print(tag)
+									getTag = tag
 								}
 								.font(.callout.bold())
 								.foregroundColor(.FQBlue)
 								.buttonStyle(FQButtonStyle())
+								.frame(height: 30, alignment: .leading)
 							}
 						}
 					}
-					.frame(width: geo.size.width, height: 30, alignment: .center)
 				}
-				Spacer()
+				.frame(width: geo.size.width, height: 30, alignment: .center)
 			}
+		}
+		.onChange(of: getTag) { value in
+			NotificationCenter.default.post(name: .ongGetTag, object: value)
 		}
 	}
 	
@@ -46,6 +49,6 @@ struct TagsView: View {
 
 struct TagsView_Previews: PreviewProvider {
 	static var previews: some View {
-		TagsView(tags: ["Love","Nature","Happy"])
+		TagsView(tags: ["Love", "men", "test"])
 	}
 }
