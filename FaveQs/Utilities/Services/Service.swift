@@ -13,6 +13,7 @@ protocol ServiceProtocol {
 }
 
 class Service {
+	
 	static let shared: ServiceProtocol = Service()
 	
 	private let jsonDecoder: JSONDecoder = {
@@ -20,6 +21,7 @@ class Service {
 		jsonDecoder.dateDecodingStrategy = .iso8601
 		return jsonDecoder
 	}()
+	
 	private let baseURL = "https://favqs.com/api/"
 	private let APIKey = "7fb9c2a907716d181276d58d6d3278cd"
 	private let headers: HTTPHeaders = [

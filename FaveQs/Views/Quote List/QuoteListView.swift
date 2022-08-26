@@ -30,10 +30,18 @@ struct QuoteListView: View {
 				.padding(.horizontal)
 			}
 			.navigationTitle("Quotes List")
-			.searchable(text: $searchText)
+			.toolbar {
+				Button {
+					viewModel.getQuotes(page: currentPage, refreshable: true)
+				} label: {
+					Image(systemName: "arrow.clockwise")
+						.foregroundColor(.FQBlue)
+				}
+			}
 			.onSubmit(of: .search) {
 				viewModel.getQuotes(page: 1, filter: searchText, refreshable: true)
 			}
+			.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic))
 		}
 		.navigationViewStyle(.stack)
 		.overlay {

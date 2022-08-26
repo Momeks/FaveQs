@@ -13,6 +13,9 @@ struct QuoteDetailsView: View {
 	var hideTags: Bool
 	
 	@State private var isPresented = false
+	@State private var activityPresented = false
+	@State private var items: [Any] = []
+	
 	@ObservedObject private var tagModel = TagViewModel()
 	
 	var body: some View {
@@ -65,10 +68,20 @@ struct QuoteDetailsView: View {
 				
 				//Fave buttons and tags
 				VStack(alignment: .leading, spacing: 15) {
-					ActionButton(image: "heart.fill", title: "Fave it")
+					ActionButton(image: "heart.fill", title: "Fave it") {
+						
+					}
+					
 					Divider()
-					ActionButton(image: "square.and.arrow.up.fill", title: "Share")
+					
+					ActionButton(image: "square.and.arrow.up.fill", title: "Share") {
+						let quoteToShare = "“\(quote.body)”\n— \(quote.author)"
+						items = [quoteToShare]
+						activityPresented.toggle()
+					}
+					
 					Divider()
+					
 					if !quote.tags.isEmpty && hideTags == false {
 						TagsView(tags: quote.tags)
 					}
@@ -88,9 +101,12 @@ struct QuoteDetailsView: View {
 		.sheet(isPresented: $isPresented) {
 			FilteredQuotesView(filter: tagModel.tag)
 		}
+		.sheet(isPresented: $activityPresented) {
+			ActivityViewController(activityItems: $items)
+		}
 	}
-	
 }
+
 
 struct QuoteDetailsView_Previews: PreviewProvider {
 	static var previews: some View {
