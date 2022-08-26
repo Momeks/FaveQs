@@ -26,6 +26,7 @@ struct FaveQsApp: App {
 			}
 			.overlay {
 				CustomTabBarView(selection: $selection)
+					.ignoresSafeArea(.keyboard, edges: .bottom)
 			}
 			.onAppear {
 				Theme.navigationBarColors(background: .systemBackground, tintColor: .FQBlue, fontInLine: "Georgia-Bold", fontLarge: "Georgia-Bold")

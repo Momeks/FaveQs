@@ -23,7 +23,6 @@ struct RandomQuoteView: View {
 							.opacity(viewModel.isLoading ? 0.0 : 1.0)
 					}
 				}
-				
 				HUDView()
 					.opacity(viewModel.isLoading ? 1.0 : 0.0)
 					.animation(.linear, value: viewModel.isLoading)

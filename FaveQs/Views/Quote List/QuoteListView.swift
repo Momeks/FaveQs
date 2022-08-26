@@ -12,6 +12,7 @@ struct QuoteListView: View {
 	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
 	@ObservedObject var viewModel = QuoteViewModel()
 	@State private var currentPage = 1
+	@State private var searchText = ""
 	
 	var body: some View {
 		NavigationView {
@@ -29,6 +30,10 @@ struct QuoteListView: View {
 				.padding(.horizontal)
 			}
 			.navigationTitle("Quotes List")
+			.searchable(text: $searchText)
+			.onSubmit(of: .search) {
+				viewModel.getQuotes(page: 1, filter: searchText, refreshable: true)
+			}
 		}
 		.navigationViewStyle(.stack)
 		.overlay {

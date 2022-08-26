@@ -16,13 +16,27 @@ class QuoteViewModel: ObservableObject {
 	@Published var alertMessage = ""
 	@Published var alertTitle = ""
 	
-	func getQuotes(page: Int) {
+	enum FQType: String, CaseIterable {
+		case user
+		case tag
+		case author
+		case none = ""
+	}
+	
+	func getQuotes(page: Int, filter: String? = nil, type: FQType? = nil, refreshable: Bool? = nil) {
+		
 		isLoading = true
-		let params = ["page":"\(page)"]
-		Service.shared.request(api: "quotes", parameters: params, completion: { (result: Result<QuoteResponse,AFError>) in
+		
+		var parameters = ["page":"\(page)", "type":type ?? .none] as [String : Any]
+		if let filter = filter {
+			parameters["filter"] = filter
+		}
+		
+		Service.shared.request(api: "quotes", parameters: parameters, completion: { (result: Result<QuoteResponse,AFError>) in
 			self.isLoading = false
 			switch result {
 			case .success(let success):
+				if refreshable == true { self.quotes.removeAll() }
 				self.quotes.append(contentsOf: success.quotes)
 			case .failure(let failure):
 				self.showAlert = true
