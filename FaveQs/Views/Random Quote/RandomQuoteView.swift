@@ -17,7 +17,7 @@ struct RandomQuoteView: View {
 				if let quote = viewModel.quotes.shuffled().first {
 					VStack {
 						Spacer()
-						QuoteDetailsView(quote: quote)
+						QuoteDetailsView(quote: quote, hideTags: false)
 							.animation(.easeInOut, value: !viewModel.isLoading)
 							.opacity(viewModel.isLoading ? 0.0 : 1.0)
 					}

@@ -11,16 +11,16 @@ struct FilteredQuotesView: View {
 	
 	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
 	@Environment(\.presentationMode) var presentationMode
-	@ObservedObject var viewModel = QuoteViewModel()
+	@ObservedObject private var viewModel = QuoteViewModel()
 	var filter: String
-
+	
 	var body: some View {
 		NavigationView {
 			ScrollView(.vertical, showsIndicators: true) {
 				LazyVGrid(columns: layout, spacing: 10) {
 					ForEach(viewModel.quotes, id:\.self) { quote in
 						NavigationLink {
-							QuoteDetailsView(quote: quote)
+							QuoteDetailsView(quote: quote, hideTags: true)
 						} label: {
 							QuoteRow(quote: quote)
 						}
@@ -53,7 +53,7 @@ struct FilteredQuotesView: View {
 }
 
 struct FilteredQuotesView_Previews: PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		FilteredQuotesView(filter: "good")
-    }
+	}
 }

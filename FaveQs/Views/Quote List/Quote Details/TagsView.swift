@@ -38,7 +38,7 @@ struct TagsView: View {
 			}
 		}
 		.onChange(of: getTag) { value in
-			NotificationCenter.default.post(name: .ongGetTag, object: value)
+			NotificationCenter.default.post(name: .ongGetTag, object: value) 
 		}
 	}
 	

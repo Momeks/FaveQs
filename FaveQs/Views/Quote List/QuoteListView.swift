@@ -20,7 +20,7 @@ struct QuoteListView: View {
 				LazyVGrid(columns: layout, spacing: 10) {
 					ForEach(viewModel.quotes, id:\.self) { quote in
 						NavigationLink {
-							QuoteDetailsView(quote: quote)
+							QuoteDetailsView(quote: quote, hideTags: false)
 						} label: {
 							QuoteRow(quote: quote)
 						}
