@@ -11,6 +11,7 @@ struct QuoteListView: View {
 	
 	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
 	@ObservedObject var viewModel = QuoteViewModel()
+	@State private var currentPage = 1
 	
 	var body: some View {
 		NavigationView {
@@ -27,10 +28,16 @@ struct QuoteListView: View {
 				}
 				.padding(.horizontal)
 			}
-			.navigationTitle("Quotes List")
+			.navigationTitle("Random Quote")
 		}
+		.navigationViewStyle(.stack)
 		.task {
-			viewModel.getQuotes(page: 1)
+			viewModel.getQuotes(page: currentPage)
+		}
+		.overlay {
+			HUDView()
+				.opacity(viewModel.isLoading ? 1.0 : 0.0)
+				.animation(.linear, value: viewModel.isLoading)
 		}
 	}
 }

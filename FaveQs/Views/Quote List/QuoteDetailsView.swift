@@ -42,10 +42,12 @@ struct QuoteDetailsView: View {
 					}
 					.foregroundColor(.secondary)
 					Divider()
+					
 					//quoutation
 					Text("“\(quote.body)”")
 						.font(.system(size: 31, weight: .regular, design: .serif))
 						.fixedSize(horizontal: false, vertical: true)
+						.multilineTextAlignment(.leading)
 					
 					//author
 					HStack {
@@ -53,9 +55,12 @@ struct QuoteDetailsView: View {
 						Text("— \(quote.author)")
 							.font(.system(size: 19, weight: .bold, design: .serif))
 							.foregroundColor(.secondary)
+							.multilineTextAlignment(.trailing)
 					}
 				}
 				.padding(30)
+				
+				//Fave buttons and tags
 				VStack(spacing: 15) {
 					FaveButton()
 					if !quote.tags.isEmpty {
