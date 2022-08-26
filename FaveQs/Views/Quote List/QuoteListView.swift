@@ -28,17 +28,18 @@ struct QuoteListView: View {
 				}
 				.padding(.horizontal)
 			}
-			.navigationTitle("Random Quote")
+			.navigationTitle("Quotes List")
 		}
 		.navigationViewStyle(.stack)
-		.task {
-			viewModel.getQuotes(page: currentPage)
-		}
 		.overlay {
 			HUDView()
 				.opacity(viewModel.isLoading ? 1.0 : 0.0)
 				.animation(.linear, value: viewModel.isLoading)
 		}
+	}
+	
+	init() {
+		viewModel.getQuotes(page: currentPage)
 	}
 }
 

@@ -15,11 +15,12 @@ struct RandomQuoteView: View {
 		NavigationView {
 			ZStack(alignment: .center) {
 				
-				if let quote = viewModel.quotes.first {
+				if let quote = viewModel.quotes.shuffled().first {
 					VStack {
 						Spacer()
 						QuoteDetailsView(quote: quote)
 							.animation(.easeInOut, value: !viewModel.isLoading)
+							.opacity(viewModel.isLoading ? 0.0 : 1.0)
 					}
 				}
 				
@@ -28,22 +29,33 @@ struct RandomQuoteView: View {
 					.animation(.linear, value: viewModel.isLoading)
 			}
 			.navigationTitle("Random Quote")
+			.toolbar {
+				Button {
+					getRandomQuote()
+				} label: {
+					Image(systemName: "arrow.clockwise")
+				}
+			}
 		}
 		.navigationViewStyle(.stack)
-		.task {
-			getQuotes()
-		}
 		.alert(viewModel.alertTitle, isPresented: $viewModel.showAlert) {
 			Button("Reload", role: .cancel) {
-				getQuotes()
+				getRandomQuote()
 			}
 		} message: {
 			Text(viewModel.alertMessage)
 		}
 	}
 	
-	func getQuotes() {
-		viewModel.getQuotes(page: Int.random(in: 1..<10))
+	init() {
+		getRandomQuote()
+	}
+}
+
+//MARK: - Functions
+extension RandomQuoteView {
+	func getRandomQuote() {
+		viewModel.getQuotes(page: Int.random(in: 1...10))
 	}
 }
 

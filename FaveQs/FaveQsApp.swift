@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct FaveQsApp: App {
 	
-	@State private var selection: Int = 0
+	@State private var selection: Int = 1
 	
 	var body: some Scene {
 		WindowGroup {

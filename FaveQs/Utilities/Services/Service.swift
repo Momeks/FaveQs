@@ -33,6 +33,7 @@ class Service {
 extension Service: ServiceProtocol {
 	func request<T:Codable>(api: String, parameters:[String:Any], completion: @escaping(Result<T, AFError>) -> Void) {
 		let url = URL(string: baseURL + api)!
+		print(url.description)
 		let parameters = parameters
 		AF.request(url, method: .get , parameters: parameters, headers: headers)
 			.validate(statusCode: 200..<300)

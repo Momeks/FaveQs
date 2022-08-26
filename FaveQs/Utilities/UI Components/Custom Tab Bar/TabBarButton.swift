@@ -20,10 +20,11 @@ struct TabBarButton: View {
 			Image(systemName: image)
 				.resizable()
 				.aspectRatio(contentMode: .fit)
-				.frame(width: 27, height: 27, alignment: .center)
+				.frame(width: 25, height: 25, alignment: .center)
 				.foregroundColor(color)
 		}
 		.buttonStyle(FQButtonStyle())
+		.offset(y: -14)
 	}
 }
 
