@@ -17,17 +17,16 @@ struct TagsView: View {
 		GeometryReader { geo in
 			HStack {
 				HStack(alignment: .center) {
-					Image(systemName: "tag.fill")
+					Image(systemName: "tag").imageScale(.large)
+						.foregroundColor(.FQBlue)
 					Text("Tags:")
-						.font(.callout.bold())
 					ScrollView(.horizontal, showsIndicators: false) {
 						LazyHGrid(rows: layout) {
 							ForEach(tags, id: \.self) { tag in
 								Button(tag) {
 									getTag = tag
 								}
-								.font(.callout.bold())
-								.foregroundColor(.FQBlue)
+								.font(.body.bold())
 								.buttonStyle(FQButtonStyle())
 								.frame(height: 30, alignment: .leading)
 							}

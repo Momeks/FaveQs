@@ -18,10 +18,9 @@ struct ActionButton: View {
 			action?()
 		} label: {
 			HStack {
-				Image(systemName: image)
-				Text(title)
-					.font(.callout.bold())
+				Image(systemName: image).imageScale(.large)
 					.foregroundColor(.FQBlue)
+				Text(title)
 			}
 		}
 		.buttonStyle(FQButtonStyle())

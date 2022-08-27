@@ -69,7 +69,7 @@ struct QuoteDetailsView: View {
 				
 				//Fave buttons and tags
 				VStack(alignment: .leading, spacing: 15) {
-					ActionButton(image: isAddedToFavorite() ? "heart.slash.fill" : "heart.fill", title: isAddedToFavorite() ? "Remove from favorite " : "Fave it") {
+					ActionButton(image: isAddedToFavorite() ? "heart" : "heart", title: isAddedToFavorite() ? "Remove from favorite " : "Fave it") {
 						if !isAddedToFavorite() {
 							addToFavorites()
 						} else {
@@ -79,7 +79,7 @@ struct QuoteDetailsView: View {
 					
 					Divider()
 					
-					ActionButton(image: "square.and.arrow.up.fill", title: "Share") {
+					ActionButton(image: "square.and.arrow.up", title: "Share") {
 						let quoteToShare = "“\(quote.body)”\n— \(quote.author)"
 						items = [quoteToShare]
 						activityPresented.toggle()
