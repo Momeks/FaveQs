@@ -14,6 +14,13 @@ struct FavoritesView: View {
 				
 			}
 			.navigationTitle("Favorites")
+			.toolbar {
+				Button {
+					
+				} label: {
+					Image(systemName: "person.crop.circle")
+				}
+			}
 		}
 		.navigationViewStyle(.stack)
     }

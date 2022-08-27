@@ -35,6 +35,7 @@
 		7BEA660228BA04FA0006B905 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660128BA04FA0006B905 /* FavoritesView.swift */; };
 		7BEA660428BA05EA0006B905 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660328BA05EA0006B905 /* Session.swift */; };
 		7BEA660628BA0DC90006B905 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660528BA0DC90006B905 /* SessionViewModel.swift */; };
+		7BEA660828BA5D420006B905 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660728BA5D420006B905 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		7BEA660128BA04FA0006B905 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		7BEA660328BA05EA0006B905 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7BEA660528BA0DC90006B905 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		7BEA660728BA5D420006B905 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +215,7 @@
 		7BEA65D628B766430006B905 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				7BEA65DC28B77B9E0006B905 /* Service.swift */,
+				7BEA660928BA65260006B905 /* API Service */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -251,6 +253,15 @@
 				7BEA660128BA04FA0006B905 /* FavoritesView.swift */,
 			);
 			path = Favorites;
+			sourceTree = "<group>";
+		};
+		7BEA660928BA65260006B905 /* API Service */ = {
+			isa = PBXGroup;
+			children = (
+				7BEA660728BA5D420006B905 /* NetworkError.swift */,
+				7BEA65DC28B77B9E0006B905 /* Service.swift */,
+			);
+			path = "API Service";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 				7BE9565B28B500B300E60176 /* FaveQsApp.swift in Sources */,
 				7BEA660428BA05EA0006B905 /* Session.swift in Sources */,
 				7BEA65FB28B951B70006B905 /* NSNotificationName+Extension.swift in Sources */,
+				7BEA660828BA5D420006B905 /* NetworkError.swift in Sources */,
 				7BEA65F028B8BD5C0006B905 /* HUDView.swift in Sources */,
 				7BEA65FF28B96F720006B905 /* ActivityViewController.swift in Sources */,
 			);

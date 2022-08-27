@@ -26,7 +26,7 @@ class SessionViewModel: ObservableObject {
 			case .success(let success):
 				print(success)
 			case .failure(let failure):
-				print(failure)
+				print(failure.failedStringEncoding)
 			}
 		})
 	}
