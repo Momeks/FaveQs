@@ -10,7 +10,9 @@ import SwiftUI
 @main
 struct FaveQsApp: App {
 	
+	@StateObject private var dataController = DataController()
 	@State private var selection: Int = 2
+	
 	var body: some Scene {
 		WindowGroup {
 			TabView(selection: $selection) {
@@ -23,6 +25,7 @@ struct FaveQsApp: App {
 				FavoritesView()
 					.tag(2)
 			}
+			.environment(\.managedObjectContext, dataController.container.viewContext)
 			.overlay {
 				CustomTabBarView(selection: $selection)
 					.ignoresSafeArea(.keyboard, edges: .bottom)

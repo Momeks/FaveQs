@@ -19,7 +19,7 @@ class SessionViewModel: ObservableObject {
 		isLoading = true
 		let jsonBody = "{\n  \"user\": {\n    \"login\": \"\(user.login)\",\n    \"password\": \"\(user.password)\"\n  }\n}"
 		let parameter = convertToDictionary(json: jsonBody) ?? [:]
-		Service.shared.request(api: "session", method: .post, parameters: parameter , encoding: JSONEncoding.default, completion: { [self] (result: Result<SessionResponse,AFError>) in
+		APIService.shared.request(api: "session", method: .post, parameters: parameter , encoding: JSONEncoding.default, completion: { [self] (result: Result<SessionResponse,AFError>) in
 			self.isLoading = false
 			switch result {
 			case .success(let success):

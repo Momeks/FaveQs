@@ -8,13 +8,28 @@
 import SwiftUI
 
 struct FavoritesView: View {
+	
 	@State private var loginViewPresented = false
 	@State private var userViewPresented = false
+	@Environment(\.managedObjectContext) var moc
+	@FetchRequest(sortDescriptors: [ SortDescriptor(\.id, order: .reverse)]) var favorites: FetchedResults<Favorites>
+	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
+	private var quote: Quote!
 	
-    var body: some View {
+	var body: some View {
 		NavigationView {
-			ZStack {
-				
+			ScrollView(.vertical, showsIndicators: true) {
+				LazyVGrid(columns: layout, spacing: 10) {
+					ForEach(favorites) { favorites in
+						NavigationLink {
+							QuoteDetailsView(quote: Quote(id: Int(favorites.id), dialogue: false, quotePrivate: false, tags: [], url: "", favoritesCount: Int(favorites.favoritesCount), upvotesCount: Int(favorites.upvotesCount), downvotesCount: Int(favorites.downvotesCount), author: favorites.author ?? "", authorPermalink: "", body: favorites.body ?? "", source: "", context: ""), hideTags: true)
+						} label: {
+							QuoteRow(quote: Quote(id: Int(favorites.id), dialogue: false, quotePrivate: false, tags: [], url: "", favoritesCount: Int(favorites.favoritesCount), upvotesCount: Int(favorites.upvotesCount), downvotesCount: Int(favorites.downvotesCount), author: favorites.author ?? "", authorPermalink: "", body: favorites.body ?? "", source: "", context: ""))
+						}
+						.buttonStyle(FQButtonStyle())
+					}
+				}
+				.padding(.horizontal)
 			}
 			.navigationTitle("Favorites")
 			.toolbar {
@@ -25,6 +40,12 @@ struct FavoritesView: View {
 				}
 			}
 		}
+		.overlay {
+			if favorites.isEmpty {
+				Text("No Favorite Qoutes")
+					.font(.callout.bold())
+			}
+		}
 		.navigationViewStyle(.stack)
 		.sheet(isPresented: $loginViewPresented) {
 			LoginView()
@@ -32,11 +53,13 @@ struct FavoritesView: View {
 		.alert("Hello \(AppDefaults.shared.userName())", isPresented: $userViewPresented, actions: {
 			Button("OK", role: .cancel, action: {})
 		})
-    }
+	}
+	
+	
 }
 
 struct FavoritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoritesView()
-    }
+	static var previews: some View {
+		FavoritesView()
+	}
 }

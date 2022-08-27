@@ -15,8 +15,9 @@ struct QuoteDetailsView: View {
 	@State private var isPresented = false
 	@State private var activityPresented = false
 	@State private var items: [Any] = []
-	
 	@ObservedObject private var tagModel = TagViewModel()
+	@Environment(\.managedObjectContext) var moc
+	@FetchRequest(sortDescriptors: [ SortDescriptor(\.id, order: .reverse)]) var favorites: FetchedResults<Favorites>
 	
 	var body: some View {
 		ScrollView(showsIndicators: false) {
@@ -68,8 +69,12 @@ struct QuoteDetailsView: View {
 				
 				//Fave buttons and tags
 				VStack(alignment: .leading, spacing: 15) {
-					ActionButton(image: "heart.fill", title: "Fave it") {
-						
+					ActionButton(image: isAddedToFavorite() ? "heart.slash.fill" : "heart.fill", title: isAddedToFavorite() ? "Remove from favorite " : "Fave it") {
+						if !isAddedToFavorite() {
+							addToFavorites()
+						} else {
+							deleteFromFavorites(quote.id)
+						}
 					}
 					
 					Divider()
@@ -107,6 +112,37 @@ struct QuoteDetailsView: View {
 	}
 }
 
+//MARK: - Core Data
+extension QuoteDetailsView {
+	func addToFavorites() {
+		let favorites = Favorites(context: moc)
+		favorites.id = Int64(quote.id)
+		favorites.body = quote.body
+		favorites.author = quote.author
+		favorites.upvotesCount = Int16(quote.upvotesCount)
+		favorites.downvotesCount = Int16(quote.downvotesCount)
+		favorites.favoritesCount = Int16(quote.favoritesCount)
+		try? moc.save()
+	}
+	
+	func deleteFromFavorites(_ id: Int) {
+		let madIDs = favorites.map { $0.id }
+		guard let index = madIDs.firstIndex(of: Int64(quote.id)) else { return }
+		moc.delete(favorites[index])
+		try? moc.save()
+	}
+	
+	func isAddedToFavorite() -> Bool {
+		let mapIDs = favorites.map { $0.id }
+		guard let index = mapIDs.firstIndex(of: Int64(quote.id))  else { return false }
+		let faveID = mapIDs[index]
+		if quote.id == faveID   {
+			return true
+		} else {
+			return false
+		}
+	}
+}
 
 struct QuoteDetailsView_Previews: PreviewProvider {
 	static var previews: some View {

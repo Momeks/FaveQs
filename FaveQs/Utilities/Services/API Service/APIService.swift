@@ -12,9 +12,9 @@ protocol ServiceProtocol {
 	func request<T:Codable>(api: String, method: HTTPMethod, parameters:[String:Any], encoding: ParameterEncoding, completion: @escaping(Result<T, AFError>) -> Void)
 }
 
-class Service {
+class APIService {
 	
-	static let shared: ServiceProtocol = Service()
+	static let shared: ServiceProtocol = APIService()
 	private let baseURL = "https://favqs.com/api/"
 	
 	private let headers: HTTPHeaders = [
@@ -29,10 +29,9 @@ class Service {
 	}()
 }
 
-extension Service: ServiceProtocol {
+extension APIService: ServiceProtocol {
 	func request<T:Codable>(api: String, method: HTTPMethod, parameters:[String:Any], encoding:  ParameterEncoding, completion: @escaping(Result<T, AFError>) -> Void) {
 		let url = URL(string: baseURL + api)!
-		print(url)
 		let parameters = parameters
 		AF.request(url, method: method , parameters: parameters, encoding: encoding, headers: headers)
 			.validate(statusCode: 200..<300)

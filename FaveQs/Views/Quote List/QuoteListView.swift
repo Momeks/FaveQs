@@ -56,6 +56,7 @@ struct QuoteListView: View {
 	}
 }
 
+
 struct QuoteListView_Previews: PreviewProvider {
 	static var previews: some View {
 		QuoteListView()

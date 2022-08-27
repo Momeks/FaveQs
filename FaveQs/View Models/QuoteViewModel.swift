@@ -31,7 +31,7 @@ class QuoteViewModel: ObservableObject {
 			body["filter"] = filter
 		}
 
-		Service.shared.request(api: "quotes", method: .get, parameters: body, encoding: URLEncoding.default, completion: { (result: Result<QuoteResponse,AFError>) in
+		APIService.shared.request(api: "quotes", method: .get, parameters: body, encoding: URLEncoding.default, completion: { (result: Result<QuoteResponse,AFError>) in
 			self.isLoading = false
 			switch result {
 			case .success(let success):
