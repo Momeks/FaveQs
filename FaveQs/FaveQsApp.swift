@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct FaveQsApp: App {
 	
-	@State private var selection: Int = 1
+	@State private var selection: Int = 2
 	
 	var body: some Scene {
 		WindowGroup {
@@ -21,7 +21,7 @@ struct FaveQsApp: App {
 				QuoteListView()
 					.tag(1)
 				
-				EmptyView()
+				LoginView()
 					.tag(2)
 			}
 			.overlay {
