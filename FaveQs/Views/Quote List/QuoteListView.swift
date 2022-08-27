@@ -38,12 +38,12 @@ struct QuoteListView: View {
 						.foregroundColor(.FQBlue)
 				}
 			}
-			.onSubmit(of: .search) {
-				viewModel.getQuotes(page: 1, filter: searchText, refreshable: true)
-			}
 			.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .automatic))
 		}
 		.navigationViewStyle(.stack)
+		.onSubmit(of: .search) {
+			viewModel.getQuotes(page: 1, filter: searchText, refreshable: true)
+		}
 		.overlay {
 			HUDView()
 				.opacity(viewModel.isLoading ? 1.0 : 0.0)
