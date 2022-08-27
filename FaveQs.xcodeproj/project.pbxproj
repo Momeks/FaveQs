@@ -33,9 +33,10 @@
 		7BEA65FD28B963A20006B905 /* TagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65FC28B963A20006B905 /* TagViewModel.swift */; };
 		7BEA65FF28B96F720006B905 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA65FE28B96F720006B905 /* ActivityViewController.swift */; };
 		7BEA660228BA04FA0006B905 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660128BA04FA0006B905 /* FavoritesView.swift */; };
-		7BEA660428BA05EA0006B905 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660328BA05EA0006B905 /* Session.swift */; };
+		7BEA660428BA05EA0006B905 /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660328BA05EA0006B905 /* SessionResponse.swift */; };
 		7BEA660628BA0DC90006B905 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660528BA0DC90006B905 /* SessionViewModel.swift */; };
-		7BEA660828BA5D420006B905 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660728BA5D420006B905 /* NetworkError.swift */; };
+		7BEA660B28BA65F90006B905 /* AppDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660A28BA65F90006B905 /* AppDefaults.swift */; };
+		7BEA660D28BA6CD60006B905 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEA660C28BA6CD60006B905 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,9 +67,10 @@
 		7BEA65FC28B963A20006B905 /* TagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewModel.swift; sourceTree = "<group>"; };
 		7BEA65FE28B96F720006B905 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		7BEA660128BA04FA0006B905 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
-		7BEA660328BA05EA0006B905 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7BEA660328BA05EA0006B905 /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		7BEA660528BA0DC90006B905 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
-		7BEA660728BA5D420006B905 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		7BEA660A28BA65F90006B905 /* AppDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaults.swift; sourceTree = "<group>"; };
+		7BEA660C28BA6CD60006B905 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +131,6 @@
 				7BE9566D28B5778A00E60176 /* Random Qoute */,
 				7BEA65C128B7650D0006B905 /* Quote List */,
 				7BEA660028BA04DF0006B905 /* Favorites */,
-				7BE9566A28B535C200E60176 /* Login */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,17 +140,10 @@
 			children = (
 				7BEA65D728B767410006B905 /* Quote.swift */,
 				7BEA65E528B7BC010006B905 /* QuoteResponse.swift */,
-				7BEA660328BA05EA0006B905 /* Session.swift */,
+				7BEA660328BA05EA0006B905 /* SessionResponse.swift */,
+				7BEA660C28BA6CD60006B905 /* User.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		7BE9566A28B535C200E60176 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				7BE9566B28B535CE00E60176 /* LoginView.swift */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		7BE9566D28B5778A00E60176 /* Random Qoute */ = {
@@ -179,6 +173,7 @@
 				7BEA65C728B765240006B905 /* UI Components */,
 				7BEA65CE28B765240006B905 /* Extensions */,
 				7BEA65FE28B96F720006B905 /* ActivityViewController.swift */,
+				7BEA660A28BA65F90006B905 /* AppDefaults.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -251,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				7BEA660128BA04FA0006B905 /* FavoritesView.swift */,
+				7BE9566B28B535CE00E60176 /* LoginView.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -258,7 +254,6 @@
 		7BEA660928BA65260006B905 /* API Service */ = {
 			isa = PBXGroup;
 			children = (
-				7BEA660728BA5D420006B905 /* NetworkError.swift */,
 				7BEA65DC28B77B9E0006B905 /* Service.swift */,
 			);
 			path = "API Service";
@@ -360,10 +355,11 @@
 				7BEA65C528B7650D0006B905 /* QuoteRow.swift in Sources */,
 				7BE9566F28B577AF00E60176 /* RandomQuoteView.swift in Sources */,
 				7BEA65D428B765240006B905 /* TagsView.swift in Sources */,
+				7BEA660D28BA6CD60006B905 /* User.swift in Sources */,
 				7BE9565B28B500B300E60176 /* FaveQsApp.swift in Sources */,
-				7BEA660428BA05EA0006B905 /* Session.swift in Sources */,
+				7BEA660428BA05EA0006B905 /* SessionResponse.swift in Sources */,
 				7BEA65FB28B951B70006B905 /* NSNotificationName+Extension.swift in Sources */,
-				7BEA660828BA5D420006B905 /* NetworkError.swift in Sources */,
+				7BEA660B28BA65F90006B905 /* AppDefaults.swift in Sources */,
 				7BEA65F028B8BD5C0006B905 /* HUDView.swift in Sources */,
 				7BEA65FF28B96F720006B905 /* ActivityViewController.swift in Sources */,
 			);

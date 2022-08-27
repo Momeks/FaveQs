@@ -9,25 +9,14 @@ import Foundation
 
 // MARK: - SessionResponse
 struct SessionResponse: Codable {
-	let userToken, login, email: String
+	let userToken, login, email, message: String?
+	let errorCode: Int?
 
 	enum CodingKeys: String, CodingKey {
 		case userToken = "User-Token"
 		case login, email
-	}
-}
-
-// MARK: - User
-struct User: Codable {
-	let login, password: String
-}
-
-// MARK: - SessionResponseError
-struct SessionResponseError: Codable {
-	let errorCode: Int
-	let message: String
-
-	enum CodingKeys: String, CodingKey {
+		
+		//Handle errors !!!
 		case errorCode = "error_code"
 		case message
 	}
