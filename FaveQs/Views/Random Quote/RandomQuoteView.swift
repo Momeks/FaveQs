@@ -1,5 +1,5 @@
 //
-//  RandomQouteView.swift
+//  RandomQuoteView.swift
 //  FaveQs
 //
 //  Created by Momeks on 8/24/22.
@@ -57,7 +57,7 @@ extension RandomQuoteView {
 	}
 }
 
-struct RandomQouteView_Previews: PreviewProvider {
+struct RandomQuoteView_Previews: PreviewProvider {
 	static var previews: some View {
 		RandomQuoteView()
 	}

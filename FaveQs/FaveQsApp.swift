@@ -11,7 +11,7 @@ import SwiftUI
 struct FaveQsApp: App {
 	
 	@StateObject private var dataController = DataController()
-	@State private var selection: Int = 2
+	@State private var selection: Int = 1
 	
 	var body: some Scene {
 		WindowGroup {

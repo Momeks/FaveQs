@@ -54,7 +54,7 @@ struct LoginView: View {
 					Spacer()
 				}
 			}
-			
+			.ignoresSafeArea(edges: [.top])
 			.toolbar {
 				Button {
 					presentationMode.wrappedValue.dismiss()

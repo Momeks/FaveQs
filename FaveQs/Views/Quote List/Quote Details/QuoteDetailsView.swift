@@ -50,30 +50,32 @@ struct QuoteDetailsView: View {
 					.foregroundColor(.secondary)
 					Divider()
 					
-					//quoutation
-					Text("“\(quote.body)”")
-						.font(.system(size: 31, weight: .regular, design: .serif))
-						.fixedSize(horizontal: false, vertical: true)
-						.multilineTextAlignment(.leading)
-					
-					//author
-					HStack {
-						Spacer()
-						Text("— \(quote.author)")
-							.font(.system(size: 19, weight: .bold, design: .serif))
-							.foregroundColor(.secondary)
-							.multilineTextAlignment(.trailing)
+					VStack(spacing: 30) {
+						//quoutation
+						Text("“\(quote.body)”")
+							.font(.system(size: 31, weight: .regular, design: .serif))
+							.fixedSize(horizontal: false, vertical: true)
+							.multilineTextAlignment(.leading)
+						
+						//author
+						HStack {
+							Spacer()
+							Text("— \(quote.author)")
+								.font(.system(size: 19, weight: .bold, design: .serif))
+								.foregroundColor(.secondary)
+								.multilineTextAlignment(.trailing)
+						}
 					}
 				}
 				.padding(30)
 				
 				//Fave buttons and tags
 				VStack(alignment: .leading, spacing: 15) {
-					ActionButton(image: isAddedToFavorite() ? "heart" : "heart", title: isAddedToFavorite() ? "Remove from favorite " : "Fave it") {
-						if !isAddedToFavorite() {
-							addToFavorites()
-						} else {
+					ActionButton(image: isAddedToFavorite() ? "heart.slash" : "heart", title: isAddedToFavorite() ? "Remove from favorite " : "Fave it") {
+						if isAddedToFavorite() {
 							deleteFromFavorites(quote.id)
+						} else {
+							addToFavorites()
 						}
 					}
 					

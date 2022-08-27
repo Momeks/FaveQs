@@ -9,7 +9,7 @@ import SwiftUI
 
 struct QuoteListView: View {
 	
-	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
+	private let layout = [GridItem(.adaptive(minimum: 150), spacing: 20)]
 	@ObservedObject var viewModel = QuoteViewModel()
 	@State private var currentPage = 1
 	@State private var searchText = ""
@@ -17,7 +17,7 @@ struct QuoteListView: View {
 	var body: some View {
 		NavigationView {
 			ScrollView(.vertical, showsIndicators: true) {
-				LazyVGrid(columns: layout, spacing: 10) {
+				LazyVGrid(columns: layout, spacing: 15) {
 					ForEach(viewModel.quotes, id:\.self) { quote in
 						NavigationLink {
 							QuoteDetailsView(quote: quote, hideTags: false)

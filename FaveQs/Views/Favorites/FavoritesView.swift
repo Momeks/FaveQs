@@ -13,13 +13,13 @@ struct FavoritesView: View {
 	@State private var userViewPresented = false
 	@Environment(\.managedObjectContext) var moc
 	@FetchRequest(sortDescriptors: [ SortDescriptor(\.id, order: .reverse)]) var favorites: FetchedResults<Favorites>
-	private let layout = [GridItem(.adaptive(minimum: 170), spacing: 10)]
+	private let layout = [GridItem(.adaptive(minimum: 150), spacing: 20)]
 	private var quote: Quote!
 	
 	var body: some View {
 		NavigationView {
 			ScrollView(.vertical, showsIndicators: true) {
-				LazyVGrid(columns: layout, spacing: 10) {
+				LazyVGrid(columns: layout, spacing: 15) {
 					ForEach(favorites) { favorites in
 						NavigationLink {
 							QuoteDetailsView(quote: Quote(id: Int(favorites.id), dialogue: false, quotePrivate: false, tags: [], url: "", favoritesCount: Int(favorites.favoritesCount), upvotesCount: Int(favorites.upvotesCount), downvotesCount: Int(favorites.downvotesCount), author: favorites.author ?? "", authorPermalink: "", body: favorites.body ?? "", source: "", context: ""), hideTags: true)
@@ -42,7 +42,7 @@ struct FavoritesView: View {
 		}
 		.overlay {
 			if favorites.isEmpty {
-				Text("No Favorite Qoutes")
+				Text("No Favorite Quotes")
 					.font(.callout.bold())
 			}
 		}
