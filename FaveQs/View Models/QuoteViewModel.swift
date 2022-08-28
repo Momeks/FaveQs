@@ -30,13 +30,19 @@ class QuoteViewModel: ObservableObject {
 		if let filter = filter {
 			body["filter"] = filter
 		}
-
+		
 		APIService.shared.request(api: "quotes", method: .get, parameters: body, encoding: URLEncoding.default, completion: { (result: Result<QuoteResponse,AFError>) in
 			self.isLoading = false
 			switch result {
 			case .success(let success):
-				if refreshable == true { self.quotes.removeAll() }
-				self.quotes.append(contentsOf: success.quotes)
+				if !success.lastPage {
+					if refreshable == true { self.quotes.removeAll() }
+					self.quotes.append(contentsOf: success.quotes)
+				} else {
+					self.showAlert = true
+					self.alertTitle = "Alas!"
+					self.alertMessage = "No more quote left to show"
+				}
 			case .failure(let failure):
 				self.showAlert = true
 				self.alertTitle = "Error \(failure.responseCode?.formatted() ?? "")"

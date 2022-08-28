@@ -18,7 +18,7 @@ struct QuoteDetailsView: View {
 	@ObservedObject private var tagModel = TagViewModel()
 	@Environment(\.managedObjectContext) var moc
 	@FetchRequest(sortDescriptors: [ SortDescriptor(\.id, order: .reverse)]) var favorites: FetchedResults<Favorites>
-	
+	 
 	var body: some View {
 		ScrollView(showsIndicators: false) {
 			VStack(alignment: .leading) {
@@ -51,7 +51,7 @@ struct QuoteDetailsView: View {
 					Divider()
 					
 					VStack(spacing: 30) {
-						//quoutation
+						//quotation
 						Text("“\(quote.body)”")
 							.font(.system(size: 31, weight: .regular, design: .serif))
 							.fixedSize(horizontal: false, vertical: true)
@@ -146,6 +146,7 @@ extension QuoteDetailsView {
 	}
 }
 
+//MARK: - Previews
 struct QuoteDetailsView_Previews: PreviewProvider {
 	static var previews: some View {
 		QuoteDetailsView(quote: Quote(id: 26637, dialogue: false, quotePrivate: false, tags: ["nature","love"], url: "https://favqs.com/quotes/ralph-waldo-emerson/26637-the-highest-r-", favoritesCount: 2, upvotesCount: 1, downvotesCount: 0, author: "Ralph Waldo Emerson", authorPermalink: "ralph-waldo-emerson", body: "The highest revelation is that God is in every man.", source: nil, context: nil), hideTags: false)

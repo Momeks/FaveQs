@@ -43,8 +43,6 @@ struct QuoteRow: View {
 	}
 }
 
-
-
 struct QuoteRow_Previews: PreviewProvider {
 	static var previews: some View {
 		QuoteRow(quote: Quote(id: 26637, dialogue: false, quotePrivate: false, tags: ["nature","love"], url: "https://favqs.com/quotes/ralph-waldo-emerson/26637-the-highest-r-", favoritesCount: 2, upvotesCount: 1, downvotesCount: 0, author: "Ralph Waldo Emerson", authorPermalink: "ralph-waldo-emerson", body: "The highest revelation is that God is in every man.", source: nil, context: nil))

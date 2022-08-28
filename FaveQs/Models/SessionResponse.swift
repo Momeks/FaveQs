@@ -16,7 +16,7 @@ struct SessionResponse: Codable {
 		case userToken = "User-Token"
 		case login, email
 		
-		//Handle errors !!!
+		//Handle errors
 		case errorCode = "error_code"
 		case message
 	}

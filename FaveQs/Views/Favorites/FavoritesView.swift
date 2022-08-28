@@ -54,8 +54,6 @@ struct FavoritesView: View {
 			Button("OK", role: .cancel, action: {})
 		})
 	}
-	
-	
 }
 
 struct FavoritesView_Previews: PreviewProvider {

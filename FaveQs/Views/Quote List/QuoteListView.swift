@@ -13,6 +13,7 @@ struct QuoteListView: View {
 	@ObservedObject var viewModel = QuoteViewModel()
 	@State private var currentPage = 1
 	@State private var searchText = ""
+	@State private var heightRatio = 2000.0
 	
 	var body: some View {
 		NavigationView {
@@ -23,6 +24,14 @@ struct QuoteListView: View {
 							QuoteDetailsView(quote: quote, hideTags: false)
 						} label: {
 							QuoteRow(quote: quote)
+								.onAppear {
+									if viewModel.quotes.last?.id == quote.id {
+										DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+											self.currentPage += 1
+											viewModel.getQuotes(page: currentPage, refreshable: false)
+										})
+									}
+								}
 						}
 						.buttonStyle(FQButtonStyle())
 					}

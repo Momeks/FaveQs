@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - Quote
 struct Quote: Codable, Hashable {
 	let id: Int
 	let dialogue, quotePrivate: Bool

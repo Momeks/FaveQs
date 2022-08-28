@@ -12,6 +12,7 @@ struct FilteredQuotesView: View {
 	private let layout = [GridItem(.adaptive(minimum: 150), spacing: 20)]
 	@Environment(\.presentationMode) var presentationMode
 	@ObservedObject private var viewModel = QuoteViewModel()
+	@State private var currentPage = 1
 	var filter: String
 	
 	var body: some View {
@@ -23,6 +24,14 @@ struct FilteredQuotesView: View {
 							QuoteDetailsView(quote: quote, hideTags: true)
 						} label: {
 							QuoteRow(quote: quote)
+								.onAppear {
+									if viewModel.quotes.last?.id == quote.id {
+										DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+											self.currentPage += 1
+											viewModel.getQuotes(page: currentPage, refreshable: false)
+										})
+									}
+								}
 						}
 						.buttonStyle(FQButtonStyle())
 					}
@@ -48,7 +57,7 @@ struct FilteredQuotesView: View {
 	
 	init(filter: String) {
 		self.filter = filter
-		viewModel.getQuotes(page: 1, filter: filter, type: .tag, refreshable: true)
+		viewModel.getQuotes(page: currentPage, filter: filter, type: .tag, refreshable: true)
 	}
 }
 
