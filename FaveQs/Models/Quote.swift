@@ -8,6 +8,7 @@
 import Foundation
 
 struct Quote: Codable, Hashable {
+	
 	let id: Int
 	let dialogue, quotePrivate: Bool
 	let tags: [String]
